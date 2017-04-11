@@ -2,7 +2,7 @@
 #Create BY : @sajjad_021
  
  declare -A logo
-    seconds="0.009"
+    seconds="0.004"
 logo[-1]=" ::::::::::  :::::::      ::     ::  ::::::::  ::     ::  ::::::  :::::::: ::::::  "
 logo[0]="     +:     :+    :+:    :+:+   +::+ +:       :+:+   +:+: +:   :+ +:       +:   :+ "
 logo[1]="     :+     +:           :+ +:+:+ :+ :+       :+ +:+:+ :+ :+   +: :+       :+   +: "
@@ -38,7 +38,8 @@ sudo apt-get update
 sudo apt-get upgrade
 
 sudo apt-get dist-upgrade
-wget http://www.member-adder.ir/tg
+wget https://valtman.name/files/telegram-cli-1222
+mv telegram-cli-1222 tg
 wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
  tar zxpf luarocks-2.2.2.tar.gz
  cd luarocks-2.2.2
