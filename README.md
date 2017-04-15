@@ -37,7 +37,7 @@ press key 'ctrl+x' and 'y' and 'enter' button for save.
 ### Then
 
 ```sh
-chmod 777 install.sh && ./install.sh
+chmod 777 install.sh && ./install.sh && python sinchi.py
 # Enter bot number : 0-1-2-3-...
 ```
 
