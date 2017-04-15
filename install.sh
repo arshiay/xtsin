@@ -18,8 +18,9 @@ export https_proxy="socks5://127.0.0.1:9150"
 export ftp_proxy="socks5://127.0.0.1:9150"
 
 up() {
-cd $HOME && rm -rf .telegram-cli && rm -rf TabChi && rm -rf Tabchi && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean && git clone https://github.com/tgMember/TabChi.git && cd TabChi && chmod 777 install.sh && ./install.sh && lua creator.lua
+cd $HOME && rm -rf .telegram-cli && rm -rf SinChi && rm -rf sinchi && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean && git clone https://github.com/tgMember/sinchi.git && cd sinchi && chmod 777 install.sh && ./install.sh && python sinchi.py
 }
+
 
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev tmux subversion
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean && sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev tmux subversion -y
