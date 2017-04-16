@@ -78,8 +78,8 @@ for see instruction and command, send help method in your bot whit out '!' , '#'
 
 ## Developers
 
-## [open and edit by (sajjad_021)](https://t.me/sajjad_021)
-## [channel (tgMember)](https://t.me/tgMember)
-
+### [open and edit by (sajjad_021)](https://t.me/sajjad_021)
+### [channel (tgMember)](https://t.me/tgMember)
+### [Developer (sinaxhpm)](https://telegram.me/sinaxhpm)
 
 Enjoy Your sinchi Bot!
