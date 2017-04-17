@@ -37,7 +37,7 @@ press key 'ctrl+x' and 'y' and 'enter' button for save.
 ### Then
 
 ```sh
-chmod 777 install.sh && ./install.sh && python sinchi.py
+chmod 777 install.sh && ./install.sh conf && ./install.sh
 # Enter bot number : 0-1-2-3-...
 ```
 
@@ -48,7 +48,7 @@ run agin your server
 
 ```
 cd sinchi
-python sinchi.py
+./install.sh
 ```
 
 ```sh
