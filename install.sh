@@ -75,6 +75,24 @@ install_rocks() {
 }
 
 install2() {
+declare -A logo
+    seconds="0.004"
+logo[-1]=" ::::::::::  :::::::      ::     ::  ::::::::  ::     ::  ::::::  :::::::: :::::: "
+logo[0]="     +:     :+    :+:    :+:+   +::+ +:       :+:+   +:+: +:   :+ +:       +:   :+ "
+logo[1]="     :+     +:           :+ +:+:+ :+ :+       :+ +:+:+ :+ :+   +: :+       :+   +: "
+logo[2]="     ++     :#           ++  +:+  ++ +++++#   ++  +:+  ++ #+++++  +++:+#   +++++#  "
+logo[3]="     ++     +#  +#+#+    #+   +   #+ #+       #+   +   +# #+   +# #+       #+   +# "
+logo[4]="     +#     #+     +#    +#       +# +#       +#       #+ +#    # +#       +#    #+"
+logo[5]="     ##      #######     ##       ## ######## ##       ## ####### ######## ##    ##"
+    printf "\033[32;4;208m\t"
+    for i in ${!logo[@]}; do
+        for x in `seq 0 ${#logo[$i]}`; do
+            printf "${logo[$i]:$x:1}"
+            sleep $seconds
+        done
+        printf "\n\t"
+    done
+printf "\n"
   	sudo apt-get update
 		sudo apt-get upgrade
 	  sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
