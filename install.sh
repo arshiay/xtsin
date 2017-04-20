@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 THIS_DIR=$(cd $(dirname $0); pwd)
@@ -31,13 +32,39 @@ install_luarocks() {
   cd ..
   rm -rf luarocks
 }
-
+ 
 install_rocks() {
   ./.luarocks/bin/luarocks install luasocket
   RET=$?; if [ $RET -ne 0 ];
     then echo "Error. Exiting."; exit $RET;
   fi
 
+
+ ./.luarocks/bin/luarocks install Lua-cURL
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
+
+ ./.luarocks/bin/luarocks install lua-term
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
+
+ ./.luarocks/bin/luarocks install dkjson
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
+
+ ./.luarocks/bin/luarocks install lanes
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
+
+ ./.luarocks/bin/luarocks install luasec
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
+	
   ./.luarocks/bin/luarocks install oauth
   RET=$?; if [ $RET -ne 0 ];
     then echo "Error. Exiting."; exit $RET;
@@ -94,7 +121,8 @@ logo[5]="     ##      #######     ##       ## ######## ##       ## ####### #####
     done
 printf "\n"
   	sudo apt-get update
-		sudo apt-get upgrade
+	sudo apt-get upgrade
+    sudo apt-get install software-properties-common
 	  sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 		sudo apt-get install g++-4.7 -y c++-4.7 -y
 		sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y
@@ -103,6 +131,8 @@ printf "\n"
 		sudo apt-get install libstdc++6 -y
 		sudo apt-get install lua-lgi -y
 		sudo apt-get install libnotify-dev -y
+		sudo easy_install pip
+    sudo pip install redis
   sudo service redis-server restart
 	wget http://valtman.name/files/telegram-cli-1222
   mv telegram-cli-1222 telegram-cli
