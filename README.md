@@ -37,7 +37,8 @@ press key 'ctrl+x' and 'y' and 'enter' button for save.
 ### Then
 
 ```sh
-chmod 777 install.sh && ./install.sh conf && ./install.sh
+chmod +x install.sh && ./install.sh
+./install.sh
 # Enter bot number : 0-1-2-3-...
 ```
 
