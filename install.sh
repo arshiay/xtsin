@@ -11,6 +11,9 @@ update() {
 #By: @sajjad_021
 # Will install luarocks on THIS_DIR/.luarocks
 install_luarocks() {
+  sudo apt-get install python-setuptools python-dev build-essential
+ sudo easy_install pip
+ sudo pip install redis
   sudo apt-get install luarocks
   git clone https://github.com/keplerproject/luarocks.git
   cd luarocks
@@ -23,7 +26,8 @@ install_luarocks() {
  sudo luarocks install dkjson
  sudo luarocks install lanes
  sudo luarocks install Lua-cUR  
- 
+ sudo service redis-server start
+
   git checkout tags/v2.4.2 # Current stable
 
   PREFIX="$THIS_DIR/.luarocks"
@@ -141,23 +145,16 @@ printf "\n"
 		sudo apt-get install libstdc++6 -y
 		sudo apt-get install lua-lgi -y
 		sudo apt-get install libnotify-dev -y
-		sudo easy_install pip
-    sudo pip install redis
-  sudo service redis-server restart
-	wget http://valtman.name/files/telegram-cli-1222
-  mv telegram-cli-1222 telegram-cli
-   chmod +x telegram-cli
-   chmod +x anticrash.sh
-  install_luarocks
-  install_rocks
-	sudo apt-get install -y tor
-  sudo apt-get install -y openvpn
-  sudo apt-get install network-manager-openvpn
-  sudo service tor start
-  sudo service openvpn start
-  export http_proxy="socks5://127.0.0.1:9150"
-  export https_proxy="socks5://127.0.0.1:9150"
-  export ftp_proxy="socks5://127.0.0.1:9150"
+		install_luarocks
+                install_rocks
+		sudo service redis-server start
+		sudo apt-get install python-setuptools python-dev build-essential
+                sudo easy_install pip
+                sudo pip install redis
+	  wget http://valtman.name/files/telegram-cli-1222
+          mv telegram-cli-1222 telegram-cli
+          chmod +x telegram-cli
+          chmod +x anticrash.sh
   exit 1
 }
 
