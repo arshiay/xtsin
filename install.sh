@@ -6,7 +6,7 @@ cd $THIS_DIR
 update() {
 	sudo apt-get update
 	sudo apt-get upgrade
-  cd $home && killall tmux && killall bash && killall screen && killall tg && killall telegram-cli && killall telegram-cli-1222 && rm -rf sinchi && rm -rf SinChi && rm -rf .telegram-cli && sudo apt-get autoclean && sudo apt-get autoremove && git clone https://github.com/tgMember/sinchi.git && cd sinchi && chmod +x install.sh && ./install.sh -y
+  cd $home && rm -rf sinchi && rm -rf SinChi && rm -rf .telegram-cli && sudo apt-get autoclean && sudo apt-get autoremove && git clone https://github.com/tgMember/sinchi.git && cd sinchi && chmod +x install.sh && ./install.sh -y
 }
 
 #By: @sajjad_021
