@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 THIS_DIR=$(cd $(dirname $0); pwd)
 cd $THIS_DIR
@@ -34,7 +34,7 @@ install_luarocks() {
    sudo apt-get install luarocks
  ./configure; sudo make bootstrap
    make build && make install 
-	  sudo service redis-server start
+   sudo service redis-server start
   cd ..
   rm -rf luarocks
 }
@@ -66,8 +66,7 @@ install_rocks() {
 
   ./.luarocks/bin/luarocks install serpent
 	
-	 sudo ./.luarocks/bin/service redis-server start
-
+sudo ./.luarocks/bin/service redis-server start
 }
 
 install2() {
