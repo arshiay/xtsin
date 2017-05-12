@@ -23,6 +23,7 @@ serpent_proxy="socks5://127.0.0.1:9151"
 while true; do
   ./telegram-cli -p sinchi-{} -s bot.lua
 sleep 3
+done
 done""".format(id,id)
 newlauncher = open("sinchi-{}.sh".format(id),"w")
 newlauncher.write(launcher)
