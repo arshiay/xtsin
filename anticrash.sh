@@ -13,6 +13,7 @@ while true ; do
     rm -rf ~/.telegram-cli/$entry/data/voice/*
     rm -rf ~/.telegram-cli/$entry/data/profile_photo/*
     tmux new-session -d -s $entry "./$entr"
+    tmux detach -s $entry
   done
   echo All SinChi is Running!
   sleep 1800
