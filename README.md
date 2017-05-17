@@ -12,7 +12,7 @@ the best bot in telegram for broadcasting and add seen. The New version and prof
 
 [![https://t.me/tgMember](https://img.shields.io/badge/%F0%9F%92%AC_Telegram-tgMember-blue.svg)](https://t.me/tgMember)
 
-<p align="center"> <img class="td" style="vertical-align: middle;" src="https://memberplus.gq/tg2.png" alt="" width="500" height="260" /></p>
+<p align="center"> <img class="td" style="vertical-align: middle;" src="https://github.com/sajjad-021/KingPKG/blob/master/logo.jpg" alt="" width="500" height="260" /></p>
 
 TeleGram-CLI based broadcasting bot!
 
@@ -81,6 +81,5 @@ for see instruction and command, send help method in your bot whit out '!' , '#'
 
 ### [open and edit by (sajjad_021)](https://t.me/sajjad_021)
 ### [channel (tgMember)](https://t.me/tgMember)
-### [Developer (sinaxhpm)](https://telegram.me/sinaxhpm)
 
 Enjoy Your sinchi Bot!
