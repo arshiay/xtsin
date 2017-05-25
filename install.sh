@@ -88,10 +88,10 @@ echo -e "\\e[38;5;129mInstalling dependencies\e"
 	sudo apt-get install g++-4.7 -y c++-4.7 -y
 	sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y
 install2
-tg
 install_luarocks
 install_rocks
 py
+tg
 log
 echo -e "\e[38;5;046mInstalling packages successfully\033[0;00m"
 }
