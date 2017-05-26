@@ -1,7 +1,17 @@
-#!/bin/bash 
-
-THIS_DIR=$(cd $(dirname $0); pwd)
-cd $THIS_DIR
+#!/usr/bin/env bash
+cd $HOME/SinChi
+red() {
+  printf '\e[1;31m%s\n\e[0;39;49m' "$@"
+}
+green() {
+  printf '\e[1;32m%s\n\e[0;39;49m' "$@"
+}
+white() {
+  printf '\e[1;37m%s\n\e[0;39;49m' "$@"
+}
+aa() {
+ sudo apt-get install
+}
 
 logo() {
     declare -A logo
@@ -26,17 +36,19 @@ printf "\e[38;5;213m\t"
 printf "\n"
 }
 
-log() {
-  echo -e "\033[38;5;105m .               /|\,/ |\,  ,- _~,   /\|,/ \|,   - _,,     ,- _~,  -_ /\,\033[0;00m"
-  echo -e "\033[38;5;142m||    _          /| || ||   (' /| /  /| || ||     -/  )   (' /| /   || ,,\033[0;00m"
-  echo -e "\033[38;5;099m=||=  / \\        || || ||  ((  ||/=  || || ||    ~||_<   ((  || =  /|| /|.\033[0;00m"
-  echo -e "\033[38;5;034m||  || ||        ||=|= ||  ((  ||    ||=|= ||     || |\  (( |||    \||/-\,\033[0;00m"
-  echo -e "\033[38;5;406m||  || ||       ~|| || ||   ( / |   ~|| || ||     ,/--||  (   |     ||  \.,\033[0;00m"
-  echo -e "\033[38;5;129m||  \|_-|        |, |\,|\,   -____-  |, |\,|\,   _--_-'    -____- _---_-|.\033[0;00m"
-         echo -e "\033[38;5;129m||   -_-_\033[0;00m"
-            echo -e "\033[38;5;129m,_-_-\.\033[0;00m"
- }
-
+function install_Sinchi() {
+ sudo apt-get update -y 
+ sudo apt-get upgrade -y
+ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev -y
+sudo apt-get install lua-lgi -y
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+sudo apt-get install libstdc++6 -y
+ sudo apt-get install libstdc++6 -y
+ sudo apt-get update -y
+ sudo apt-get upgrade -y
+ sudo apt-get dist-upgrade -y
+}??lP8
 install_luarocks() {
  echo -e "\e[38;5;142mInstalling LuaRocks\e"
   git clone https://github.com/keplerproject/luarocks.git
@@ -133,93 +145,83 @@ while true ; do
   for entr in sinchi-*.sh ; do
     entry="${entr/.sh/}"
     tmux kill-session -t $entry
-    rm -rf ~/.telegram-cli/$entry/data/animation/*
-    rm -rf ~/.telegram-cli/$entry/data/audio/*
-    rm -rf ~/.telegram-cli/$entry/data/document/*
-    rm -rf ~/.telegram-cli/$entry/data/photo/*
-    rm -rf ~/.telegram-cli/$entry/data/sticker/*
-    rm -rf ~/.telegram-cli/$entry/data/temp/*
-    rm -rf ~/.telegram-cli/$entry/data/video/*
-    rm -rf ~/.telegram-cli/$entry/data/voice/*
-    rm -rf ~/.telegram-cli/$entry/data/profile_photo/*
-    tmux new-session -d -s $entry "./$entr"
-    tmux detach -s $entry
-  done
-  echo All SinChi is Running!
-  sleep 1800
-done
+function luarocks_SinChi() {
+wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
+ tar zxpf luarocks-2.2.2.tar.gz
+ cd luarocks-2.2.2
+ ./configure; sudo make bootstrap
+ sudo luarocks install luasocket
+ sudo luarocks install luasec
+ sudo luarocks install redis-lua
+ sudo luarocks install lua-term
+ sudo luarocks install serpent
+ sudo luarocks install dkjson
+ sudo luarocks install lanes
+ sudo luarocks install Lua-cURL
+ cd ..
+}
+function chmod_SinChi() {
+ chmod +x sinchi.sh
+ chmod +x tg
+ chmod +x sinchi-0.sh
+ chmod +x on.sh
+ chmod +x off.sh
+ chmod +x auto.sh
+ chmod +x update.sh
+}
+function python_SinChi() {
+ sudo apt-get install python-setuptools python-dev build-essential -y 
+ sudo easy_install pip 
+ sudo pip install redis 
 }
 
-menu() {
-echo -e "➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\033[38;5;208mMENU\033[0;00m➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
-echo -e "1 => \033[38;5;208mInstall\033[0;00m"
-echo -e "2 => \033[38;5;208mNew bot\033[0;00m"
-echo -e "3 => \033[38;5;208manticrash - Trun On All Robot's\033[0;00m"
-echo -e "4 => \033[38;5;208mTrun Off All Robot's\033[0;00m"
-echo -e "5 => \033[38;5;208mReturn last session\033[0;00m"
-echo -e "6 => \033[38;5;208mServer info\033[0;00m"
-echo -e "7 => \033[38;5;208mRemove bot\033[0;00m"
-echo -e "0 => \033[38;5;208mExit\033[0;00m"
-echo -e "\033[38;5;208m  ➖  ➖  ➖➖➖➖➖➖  ➖  ➖  ➖  \033[0;00m"
-echo '>Channel : '"@xt_robo"
-echo '>Develop by '"@shahin_xtbot"
-# Options in ./config.sh <option>
-read VAR
-if [ "$VAR" = 1 ]; then
-  clear
-  logo
-  install
-  menu
-elif [ "$VAR" = 2 ]; then
-	cr
-elif [ "$VAR" = 3 ]; then
- 	log
-	anticrash
-	menu
-elif [ "$VAR" = 4 ]; then
-	killall telegram-cli
-	tmux kill-session -t $THIS_DIR
-	log
-	echo -e '\e[34mSessions closed\e[0m'
-	menu
-elif [ "$VAR" = 5 ]; then
-	tmux attach-session -t $THIS_DIR
-elif [ "$VAR" = 6 ]; then
-  log
-	inf
-	menu
-elif [ "$VAR" = 7 ]; then
-lua cleaner.lua
-menu
-elif [ "$VAR" = 0 ]; then
-	clear
-	log
-	exit
-elif [ "$VAR" = "" ]; then
-	clear
-	echo -e '\e[31mOpcion invalida\e[0m'
-	else
-	clear
-	echo -e '\e[31mOpcion invalida\e[0m'
-fi
+logo1_SinChi
+install_Sinchi
+luarocks_SinChi
+python_SinChi
+chmod_SinChi
+clear
+ echo -n "" > sudo.lua
+  read -p "What is your User Id? " -e input
+ echo "sudo={111795059,$input}" >> sudo.lua
+logo2_SinChifunction luarocks_SinChi() {
+wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
+ tar zxpf luarocks-2.2.2.tar.gz
+ cd luarocks-2.2.2
+ ./configure; sudo make bootstrap
+ sudo luarocks install luasocket
+ sudo luarocks install luasec
+ sudo luarocks install redis-lua
+ sudo luarocks install lua-term
+ sudo luarocks install serpent
+ sudo luarocks install dkjson
+ sudo luarocks install lanes
+ sudo luarocks install Lua-cURL
+ cd ..
+}
+function chmod_SinChi() {
+ chmod +x sinchi.sh
+ chmod +x tg
+ chmod +x sinchi-0.sh
+ chmod +x on.sh
+ chmod +x off.sh
+ chmod +x auto.sh
+ chmod +x update.sh
+}
+function python_SinChi() {
+ sudo apt-get install python-setuptools python-dev build-essential -y 
+ sudo easy_install pip 
+ sudo pip install redis 
 }
 
-if [ ! "$1" ]; then
-menu
-fi
+logo1_SinChi
+install_Sinchi
+luarocks_SinChi
+python_SinChi
+chmod_SinChi
+clear
+ echo -n "" > sudo.lua
+  read -p "What is your User Id? " -e input
+ echo "sudo={86280031,$input}" >> sudo.lua
+logo2_SinChi
 
-if [ "$1" = "info" ]; then
-  clear
-	log
-	inf
-fi
-
-if [ "$1" = "tmux" ]; then
-	log
-  anticrash
-fi
-
-if [ "$1" = "cr" ]; then
-  log
-  cr
-fi
