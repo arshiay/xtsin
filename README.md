@@ -80,7 +80,7 @@ for see instruction and command, send help method in your bot whit out '!' , '#'
 
 ## Developers
 
-### [open and edit by (sajjad_021)](https://t.me/sajjad_021)
-### [channel (tgMember)](https://t.me/tgMember)
+### [open and edit by (shahin_xtbot)](https://t.me/shahin_xtbot)
+### [channel (xt_robo)](https://t.me/xt_robo)
 
 Enjoy Your sinchi Bot!
