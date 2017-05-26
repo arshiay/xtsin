@@ -1,4 +1,4 @@
-# [sinchi](https://t.me/tgMember)
+# [xtsin](https://t.me/xt_robo)
 
 
 the best bot in telegram for broadcasting and add seen. The New version and professional of tabchi bot. base in new telegram-cli.
