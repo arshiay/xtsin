@@ -13,8 +13,8 @@ logo[3]=" ||    |''    | '|' ||   ||       | '|' ||   ||   || ||       ||   |."
 logo[4]=" '|.' '|||.  .|. | .||. .||....| .|. | .||. .||..|' .||....| .||.  '|'"
 logo[5]="    .|...'"
 logo[6]="➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖"
-logo[7]="Channel : @tgMember"
-logo[8]="Develop by @sajjad_021"
+logo[7]="Channel : @xt_robo"
+logo[8]="Develop by @shahin_xtbot"
 printf "\e[38;5;213m\t"
     for i in ${!logo[@]}; do
         for x in `seq 0 ${#logo[$i]}`; do
@@ -161,8 +161,8 @@ echo -e "6 => \033[38;5;208mServer info\033[0;00m"
 echo -e "7 => \033[38;5;208mRemove bot\033[0;00m"
 echo -e "0 => \033[38;5;208mExit\033[0;00m"
 echo -e "\033[38;5;208m  ➖  ➖  ➖➖➖➖➖➖  ➖  ➖  ➖  \033[0;00m"
-echo '>Channel : '"@tgMember"
-echo '>Develop by '"@sajjad_021"
+echo '>Channel : '"@xt_robo"
+echo '>Develop by '"@shahin_xtbot"
 # Options in ./config.sh <option>
 read VAR
 if [ "$VAR" = 1 ]; then
